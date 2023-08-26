@@ -1,0 +1,7 @@
+#  Each new line should list an additional file or folder that you want Git to ignore.\
+
+# Ignore Mac system files
+.DS_store
+
+# Ignore node_modules folder
+node_modules
