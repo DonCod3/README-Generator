@@ -1,6 +1,7 @@
 // TODO: Include packages needed for this application
 const inquirer = require("inquirer");
 const fs = require("fs");
+const generateMarkdown = require("./utils/generateMarkdown");
 
 // TODO: Create an array of questions for user input
 const questions = () => {
@@ -49,7 +50,7 @@ const questions = () => {
             name: "usage",
             message: "Provide instrictions and examples for use:",
             validate: usageInput => {
-                if(userInput) {
+                if(usageInput) {
                     return true;
                 } else {
                     console.log("Please provide instructions and examples for use.")
@@ -76,9 +77,15 @@ const questions = () => {
             }
         },
         {
-            type: "list",
-            name: "license",
+            type: "confirm",
+            name: "licenseConfirm",
+            message: "Would you like to include a license for this project?",
+            default: true
+        },
+        {
+            type: "checkbox",
             message: "Please select the license that you would like to apply:",
+            name: "license",
             choices: ["MIT", "Apache 2.0", "GPL 3.0", "BSD 3"],
             when: ({licenseConfirm}) => {
                 if(licenseConfirm) {
@@ -136,10 +143,35 @@ const questions = () => {
 };
 
 // TODO: Create a function to write README file
-function writeToFile(fileName, data) {}
+function writeToFile(data) {
+    return new Promise((resolve, reject) => {
+        fs.writeFile("./README2.md", data, err => {
+            if(err) {
+                reject(err);
+                return;
+            }
 
-// TODO: Create a function to initialize app
-function init() {}
+            resolve({
+                ok: true,
+                message: "File created"
+            });
+        });
+    });
+};
+
+// function to initialize app
+// async function improves readability and resembles synchronous code vs .then() methods
+
+async function init() {
+    try {
+        const readmeData = await questions();
+        const pageHTML = generateMarkdown(readmeData);
+        await writeToFile(pageHTML);
+        console.log("README file created successfully!");
+    } catch (error) {
+        console.error("An error occurred:", error);
+    }
+}
 
 // Function call to initialize app
 init();

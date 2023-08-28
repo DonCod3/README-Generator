@@ -7,8 +7,12 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Shamar Mel",
-  "license": "ISC",
+  "license": "MIT",
   "dependencies": {
     "inquirer": "^8.2.4"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/DonCod3/README-Generator"
   }
 }
