@@ -45,7 +45,6 @@ function generateMarkdown(data) {
 
   ## Usage
   ${data.usage}
-  ${renderImage(data)}
   ${renderLicenseSection(data)}
 
   ## Contributions

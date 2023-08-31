@@ -1,17 +1,9 @@
-# Professional README Generator
+  # Professional README Generator
 
   ## Description
   When creating an open source project on GitHub, it’s important to have a high-quality README for the app. Having a quality can greatly impact another users experience when using using your application. This project is meant to assist in quickly and easily creating a README file by using a command-line application to generate one. This allows the project creator to devote more time to working on the project.
 
   This project will require the Inquirer package [Inquirer package](https://www.npmjs.com/package/inquirer/v/8.2.4) and will offers prompts to assist the user from the command line for information to include in their README. This generator will require a project title, description, installation instructions, usage steps, contribution guidlines, tests and contact information. The user will also have the option of including and image preview and/or a license for the project 
-
-  ## Table of Contents
-  - [Installation](#installation)
-  - [Usage](#usage)
-  - [License](#license)
-  - [Contribution](#Contributing)
-  - [Tests](#tests)
-  - [Questions](#questions)
 
   ## Installation
   In order to use this application, you will first need to cline this repository on your system. 
@@ -22,13 +14,9 @@
   
   ## License
   This project is licensed under the MIT license.
-  
-
+ 
   ## Contributions
   This section can contain any contribution guidlines for your project. 
 
   ## Tests
   To test out this project, go to the `test.md` file. You can use the text within to answer the prompts and generate a README file for an example Adhere to the Usage and Installation sections first.
-
-  ## Questions
-  If there are any questions on this project, please reach out to me through my [Github profile](https://github.com/DonCod3), or email at shmvrt@gmail.com.
